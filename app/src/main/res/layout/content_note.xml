@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_note"
+    tools:context=".activities.NoteActivity">
+    <EditText
+        android:id="@+id/et_title"
+        android:hint="@string/note.title"
+        android:inputType="text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ese_mundooooo"/>
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/et_content"
+        android:hint="@string/note.content"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -2,9 +2,8 @@
     <string name="app_name">Quick Notes</string>
     <string name="title_activity_basic">BasicActivity</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="ese_mundooooo">Ese mundooooo</string>
+    <string name="ese_mundooooo">thissssss worlddd</string>
     <string name="note.title">Title</string>
     <string name="note.content">Content</string>
     <string name="menu.save">Guardar</string>
-    <string name="menu.borrar">Borrar</string>
 </resources>

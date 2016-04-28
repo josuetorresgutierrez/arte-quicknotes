@@ -2,6 +2,7 @@ package com.arte.quicknotes.adapters;
 
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +19,16 @@ import java.util.List;
  * Created by arte on 27/04/2016.
  */
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
+
+    public interface Events{
+        void onNoteClicked(Note note);
+
+    }
+    private Events mEvents;
     private List<Note> mNoteList;
 
-    public NotesAdapter (List<Note> notes) {
+    public NotesAdapter (List<Note> notes, Events events) {
+        mEvents = events;
         mNoteList = notes;
     }
     @Override
@@ -34,9 +42,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(NotesAdapter.ViewHolder holder, int position) {
-        Note note = mNoteList.get(position);
+        final Note note = mNoteList.get(position);
         holder.noteTitle.setText(note.getTitulo());
         holder.noteExcerpt.setText(note.getContenido());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(NotesAdapter.class.getSimpleName(), "Click en nota "+ note.getTitulo() );
+                mEvents.onNoteClicked(note);
+            }
+        });
     }
 
     @Override

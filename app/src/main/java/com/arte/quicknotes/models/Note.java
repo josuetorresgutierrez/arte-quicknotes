@@ -1,12 +1,23 @@
 package com.arte.quicknotes.models;
 
+import java.io.Serializable;
+
 /**
  * Created by arte on 27/04/2016.
  */
-public class Note {
+public class Note implements Serializable {
+
     private String titulo;
     private String contenido;
+    private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getTitulo() {
         return titulo;
     }
